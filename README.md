@@ -4,13 +4,17 @@
 
 ## 记录什么
 
-- 项目名称与链接：MediaCrawler  
+- 项目名称与链接：MediaCrawler
+```bash
   https://github.com/NanmiCoder/MediaCrawler
+```
 - 使用环境与版本（所有git python都最新版本）
   mac  2026/10/29
 - 操作过程与结果：按照readme安装本地环境，clone project到本地安装成功之后，开启cmd运行命令：
   （creator_id博主id：
+```bash
   https://www.xiaohongshu.com/user/profile/565fa0efcb35fb7876dbb07a?xsec_token=ABcGlRueG5JbDdirDv35BnnXJiYGY4hELhDJFXS2pFw6I%3D&xsec_source=pc_search
+```
   profile/和下一个？之间
   这一份是爬取博主所有数据，一般crawler_max_notes_count 50即可
 ```bash
@@ -42,5 +46,15 @@ AUTO_CLOSE_BROWSER = True
 - 运行结果：运行成功
 - 本地操作：爬取小红书博主数据存储到当地project下的data目录中csv，有两个csv，一个是小红书博主发表的博文csv，包括博文数量为列数，博文内容爬取为内容，另外一个csv是爬取评论数据进行存储
 - 运行结果：获取2份csv，后续做数据分析用
-- 防坑指南：chrome一定要关干净、小红书最好用大陆ip登录（挂代理很慢）、小红书不要频繁爬（停10分钟或者一晚上，反爬虫引发风控），mac所有系统环境最好是最新的（小红书更新很快）、py命令启起来之后要手动扫码登录xhs、chrome上看不到爬取痕迹后台自动爬、一切以cmd上finish结束为准如果有error或者不打log，之间ctr+c、mac做好python版本管理
+- 防坑指南：
+  >chrome一定要关干净  
+  小红书最好用大陆ip登录（挂代理很慢）  
+  小红书不要频繁爬（停10分钟或者一晚上，反爬虫引发风控） 
+  mac所有系统环境最好是最新的（小红书更新很快） 
+  py命令启起来之后要手动扫码登录xhs  
+  chrome上看不到爬取痕迹后台自动爬  
+  一切以cmd上finish结束为准如果有error或者不打log，直接ctr+c  
+  mac做好python版本管理，在单独project里用自己的py版本  
+  csv每次要取走不然下次爬虫结果会追加到以前的csv中
+  不要写py脚本去处理csv文件，因为xhs太多emoji了，属于脏数据，直接excel处理会快很多
 
