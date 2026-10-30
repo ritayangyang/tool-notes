@@ -58,3 +58,12 @@ AUTO_CLOSE_BROWSER = True
   csv每次要取走不然下次爬虫结果会追加到以前的csv中
   不要写py脚本去处理csv文件，因为xhs太多emoji了，属于脏数据，直接excel处理会快很多
 
+## 下载前检查
+- 核对操作系统：macOS
+- 核对处理器架构：arm64（Apple Silicon M系列）/ x86_64（Intel Mac）
+- 判断项目类型：区分【源码包】【可直接运行程序】
+  - MediaCrawler属于源码项目：下载zip源码 ≠ 软件，需要本地Python环境
+- 核对文件：不要把Source code源码包当成安装包
+- 风控前置（小红书爬虫）：清理Chrome残留进程、确认网络环境
+
+
