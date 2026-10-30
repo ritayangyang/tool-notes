@@ -1,0 +1,23 @@
+# 试用前核对清单（MediaCrawler / Mac）
+## 系统
+- 操作系统：macOS Tahoe26.5
+- 版本要求：尽量保持较新版本（小红书接口更新频繁，旧版macOS容易出现浏览器驱动兼容问题）
+- 网络环境：大陆原生IP，代理会拖慢、容易触发小红书风控
+- 依赖前置：已装好 Python、Git、Chrome浏览器（尽量新版本）
+
+## 处理器架构
+- M5 24GB
+> 注意：MediaCrawler 依赖Chrome，arm64 Mac要使用对应arm版Chrome；不要混用x86的Chrome/驱动
+
+## 文件类型核对项
+- 码包：Download ZIP 下载源码，后缀 .zip，解压后是项目源码（不是可直接运行软件）
+- 配置文件：base_config.py （Python脚本，修改爬虫参数、浏览器自动关闭开关）
+- 执行脚本：main.py （爬虫启动入口）
+- 输出结果：csv 文件（爬取成功后在data目录生成，博文、评论数据）
+- 日志：程序运行日志，用于排查报错
+
+## MediaCrawler 专属额外核对项
+1. Chrome浏览器进程：启动前确认killall清理残留Chrome后台，避免多实例冲突
+2. 认证凭证：xsec_token 等Cookie参数，不要明文提交到GitHub仓库
+3. 运行参数：--creator_id、--crawler_max_notes_count 等命令参数，核对拼写
+4. 风控提醒：控制爬取间隔，不要高频连续请求
